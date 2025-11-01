@@ -10,7 +10,7 @@
 <body>
   <header class="site-header small">
     <div class="header-inner">
-      <div class="logo">SHEILA<span class="accent"> STORE</span></div>
+      <div class="logo">SHEILA <span class="accent">STORE</span></div>
       <nav>
         <a href="index.html">Home</a>
         <a href="katalog.html">Katalog</a>
@@ -19,10 +19,9 @@
   </header>
 
   <main class="detail-wrap" id="detail">
-    <!-- Konten akan diisi lewat JS (dari query params) -->
     <section class="detail-card">
       <figure class="detail-media">
-        <img id="product-image" src="" alt="produk">
+        <img id="product-image" src="img/produk1.jpg" alt="produk">
       </figure>
 
       <section class="detail-info">
@@ -31,12 +30,15 @@
         <p id="product-desc" class="desc">Deskripsi singkat produk akan muncul di sini.</p>
 
         <div class="detail-actions">
-          <a id="buy-wa" class="btn-primary" href="#" target="_blank" rel="noreferrer">BELI</a>
+          <a id="buy-now" href="#" class="btn-primary">Beli Sekarang</a>
           <a class="btn-ghost" href="katalog.html">Kembali</a>
         </div>
       </section>
     </section>
   </main>
+
+  <!-- Popup Form (isi dengan script.js) -->
+  <!-- file script.js akan mengisi dan meng-handle popup -->
 
   <footer class="site-footer small">
     <div class="footer-line"></div>
@@ -47,145 +49,15 @@
       </div>
 
       <div class="footer-contacts">
-        <a href="https://wa.me/6281234567890" target="_blank" rel="noreferrer">WhatsApp</a>
+        <a id="wa-footer-2" href="#" target="_blank" rel="noreferrer">WhatsApp</a>
         <span class="sep">|</span>
-        <a href="https://instagram.com/sheilastore" target="_blank" rel="noreferrer">Instagram</a>
+        <a id="ig-footer-2" href="#" target="_blank" rel="noreferrer">Instagram</a>
         <span class="sep">|</span>
-        <a href="mailto:sheilastore@email.com">Email</a>
+        <a id="email-footer-2" href="#" target="_blank" rel="noreferrer">Email</a>
       </div>
     </div>
   </footer>
-<!-- ✅ Popup Beli Produk -->
-<div class="popup" id="popup">
-  <div class="popup-content">
-    <span class="close-popup" onclick="closePopup()">×</span>
-    <h2 class="popup-title">🛍️ Pembelian Produk</h2>
-    <h3 id="popupProductName"></h3>
-    <p>Harga Satuan: <span id="popupPrice"></span></p>
 
-    <div class="popup-input">
-      <label for="quantity">Jumlah:</label>
-      <input type="number" id="quantity" min="1" value="1" onchange="updateTotal()">
-    </div>
-
-    <p>Total: <strong id="totalPrice"></strong></p>
-
-    <div class="popup-actions">
-      <button class="confirm-btn" onclick="confirmBuy()">Konfirmasi Beli 💬</button>
-    </div>
-  </div>
-</div>
-
-
-  <script>
-    // Ambil data dari URL
-    const params = new URLSearchParams(window.location.search);
-    const img = params.get('img') || 'img/produk1.jpg';
-    const nama = params.get('nama') || 'Unnamed Product';
-    const harga = params.get('harga') || '0';
-    const desc = params.get('desc') ? decodeURIComponent(params.get('desc')) : 'Deskripsi produk belum tersedia.';
-
-    // isi elemen
-    document.getElementById('product-image').src = img;
-    document.getElementById('product-image').alt = nama;
-    document.getElementById('product-name').textContent = nama;
-    // format harga tampilan (3-digit)
-    const formatted = new Intl.NumberFormat('id-ID').format(Number(harga));
-    document.getElementById('product-price').textContent = 'Rp ' + formatted;
-    document.getElementById('product-desc').textContent = desc;
-
-    // set tombol WA (boleh ganti nomor)
-    const waNumber = '6281234567890'; // ganti dengan nomormu +62...
-    const waText = encodeURIComponent(`Halo SHEILA STORE, saya tertarik dengan produk: ${nama} (Harga: Rp ${formatted}). Bisa bantu info?`);
-    document.getElementById('buy-wa').href = `https://wa.me/${waNumber}?text=${waText}`;
-  </script>
-  <script>
-  const popup = document.getElementById("popup");
-  const productName = document.getElementById("product-name").textContent;
-  const priceText = document.getElementById("product-price").textContent.replace("Rp", "").replace(/\./g, "").trim();
-  const price = parseInt(priceText);
-
-  // Ganti tombol Beli Sekarang agar membuka popup
-  document.querySelector(".btn-primary").addEventListener("click", function(e){
-    e.preventDefault();
-    openPopup();
-  });
-
-  function openPopup(){
-    document.getElementById("popupProductName").textContent = productName;
-    document.getElementById("popupPrice").textContent = "Rp " + price.toLocaleString("id-ID");
-    document.getElementById("totalPrice").textContent = "Rp " + price.toLocaleString("id-ID");
-    popup.style.display = "flex";
-  }
-
-  function closePopup(){
-    popup.style.display = "none";
-  }
-
-  function updateTotal(){
-    const qty = document.getElementById("quantity").value;
-    const total = qty * price;
-    document.getElementById("totalPrice").textContent = "Rp " + total.toLocaleString("id-ID");
-  }
-
-  function confirmBuy(){
-    const qty = document.getElementById("quantity").value;
-    const total = qty * price;
-    const msg = `Halo Sheila Store, saya ingin membeli:\n\n- Produk: ${productName}\n- Jumlah: ${qty}\n- Total: Rp ${total.toLocaleString("id-ID")}`;
-    const wa = "6281234567890"; // ganti dengan nomormu
-    const url = `https://wa.me/${wa}?text=${encodeURIComponent(msg)}`;
-    window.open(url, "_blank");
-  }
-
-  window.onclick = function(e){
-    if (e.target == popup) closePopup();
-  }
-</script>
-<script>
-  const popup = document.getElementById("popup");
-  const productName = document.getElementById("product-name").textContent;
-  const priceText = document.getElementById("product-price").textContent.replace("Rp", "").replace(/\./g, "").trim();
-  const price = parseInt(priceText);
-
-  document.querySelector(".btn-primary").addEventListener("click", function(e){
-    e.preventDefault();
-    openPopup();
-  });
-
-  function openPopup(){
-    document.getElementById("popupProductName").textContent = productName;
-    document.getElementById("popupPrice").textContent = "Rp " + price.toLocaleString("id-ID");
-    document.getElementById("totalPrice").textContent = "Rp " + price.toLocaleString("id-ID");
-    popup.style.display = "flex";
-  }
-
-  function closePopup(){
-    popup.style.display = "none";
-  }
-
-  function updateTotal(){
-    const qty = document.getElementById("quantity").value;
-    const total = qty * price;
-    document.getElementById("totalPrice").textContent = "Rp " + total.toLocaleString("id-ID");
-  }
-
-  function confirmBuy(){
-    const qty = document.getElementById("quantity").value;
-    const total = qty * price;
-    const msg = `Halo Sheila Store, saya ingin membeli:\n\n🛍️ Produk: ${productName}\n📦 Jumlah: ${qty}\n💰 Total: Rp ${total.toLocaleString("id-ID")}`;
-    const wa = "6281234567890"; // Ganti dengan nomormu
-    const url = `https://wa.me/${wa}?text=${encodeURIComponent(msg)}`;
-    window.open(url, "_blank");
-    closePopup();
-  }
-
-  // Klik luar popup menutup modal
-  window.onclick = function(e){
-    if (e.target === popup) closePopup();
-  };
-</script>
-
-
+  <script src="script.js"></script>
 </body>
-
 </html>

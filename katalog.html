@@ -10,26 +10,24 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <div class="logo">SHEILA<span class="accent"> STORE</span></div>
+      <div class="logo">SHEILA <span class="accent">STORE</span></div>
       <nav>
         <a href="index.html">Home</a>
         <a class="active" href="katalog.html">Katalog</a>
+        <a href="#kontak">Kontak</a>
       </nav>
     </div>
   </header>
 
   <section class="hero-small">
     <h2>Koleksi Terbaru</h2>
-    <p class="sub">Gambar produk — klik untuk melihat detail lengkap</p>
+    <p class="sub">Klik gambar untuk detail produk</p>
   </section>
 
   <main class="catalog-grid" aria-live="polite">
-    <!-- ======= PRODUK: salin / duplikat blok ini untuk menambah produk =======
-         Bagian onclick akan membuka produk.html dan mengirim data via URL.
-         Ganti img/produkX.jpg, nama, price, desc sesuai produkmu.
-    -->
-    <article class="card" onclick="openProduct('img/produk1.jpg','Dress Putih Elegan','149000','Dress putih elegan dengan potongan modern — bahan lembut dan nyaman untuk segala acara.')">
-      <figure class="card-media">
+    <!-- Ulangi blok <article> untuk menambah produk -->
+    <article class="card" onclick="openProduct('img/produk1.jpg','Dress Putih Elegan',149000,'Dress putih elegan dengan potongan modern — bahan lembut dan nyaman.')">
+      <div class="card-media">
         <img src="img/produk1.jpg" alt="Dress Putih Elegan">
         <div class="overlay">
           <div class="overlay-text">
@@ -37,11 +35,11 @@
             <span>Rp 149.000</span>
           </div>
         </div>
-      </figure>
+      </div>
     </article>
 
-    <article class="card" onclick="openProduct('img/produk2.jpg','Tas Kulit Premium','249000','Tas kulit premium — desain minimal dan kualitas jahitan terbaik.')">
-      <figure class="card-media">
+    <article class="card" onclick="openProduct('img/produk2.jpg','Tas Kulit Premium',249000,'Tas kulit premium — desain minimal dan kualitas jahitan terbaik.')">
+      <div class="card-media">
         <img src="img/produk2.jpg" alt="Tas Kulit Premium">
         <div class="overlay">
           <div class="overlay-text">
@@ -49,11 +47,11 @@
             <span>Rp 249.000</span>
           </div>
         </div>
-      </figure>
+      </div>
     </article>
 
-    <article class="card" onclick="openProduct('img/produk3.jpg','Sepatu Classic','199000','Sepatu classic nyaman — sol empuk dengan model timeless.')">
-      <figure class="card-media">
+    <article class="card" onclick="openProduct('img/produk3.jpg','Sepatu Classic',199000,'Sepatu classic nyaman — sol empuk dengan model timeless.')">
+      <div class="card-media">
         <img src="img/produk3.jpg" alt="Sepatu Classic">
         <div class="overlay">
           <div class="overlay-text">
@@ -61,10 +59,9 @@
             <span>Rp 199.000</span>
           </div>
         </div>
-      </figure>
+      </div>
     </article>
 
-    <!-- tambahkan artikel lain di sini jika perlu -->
   </main>
 
   <footer id="kontak" class="site-footer">
@@ -76,30 +73,17 @@
       </div>
 
       <div class="footer-contacts">
-        <a href="https://wa.me/6281234567890" target="_blank" rel="noreferrer">WhatsApp</a>
+        <a id="wa-footer" href="#" target="_blank" rel="noreferrer">WhatsApp</a>
         <span class="sep">|</span>
-        <a href="https://instagram.com/sheilastore" target="_blank" rel="noreferrer">Instagram</a>
+        <a id="ig-footer" href="#" target="_blank" rel="noreferrer">Instagram</a>
         <span class="sep">|</span>
-        <a href="mailto:sheilastore@email.com">Email</a>
+        <a id="email-footer" href="#" target="_blank" rel="noreferrer">Email</a>
       </div>
     </div>
 
     <div class="copyright">© 2025 SHEILA STORE • All Rights Reserved</div>
   </footer>
 
-  <script>
-    function openProduct(img, name, price, desc){
-      // encode parameters, lalu buka produk.html dengan query params
-      const url = new URL(window.location.href);
-      const base = url.origin + url.pathname.substring(0, url.pathname.lastIndexOf('/')+1) + 'produk.html';
-      const params = new URLSearchParams({
-        img: img,
-        nama: name,
-        harga: price,
-        desc: desc
-      });
-      window.location.href = base + '?' + params.toString();
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

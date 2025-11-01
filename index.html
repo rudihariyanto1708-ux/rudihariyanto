@@ -1,119 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sheila Store | Welcome</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SHEILA STORE — Welcome</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --gold: #c49b66;
-      --accent: #ff6fa5;
-      --bg1: #fff5f5;
-      --bg2: #fefae0;
-      --text: #222;
-      --soft: #555;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      height: 100vh;
-      background: linear-gradient(135deg, var(--bg1), var(--bg2));
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    h1 {
-      font-size: 3rem;
-      letter-spacing: 3px;
-      font-weight: 700;
-      color: var(--text);
-      animation: fadeDown 1.3s ease;
-    }
-
-    span {
-      color: var(--gold);
-    }
-
-    p {
-      margin-top: 15px;
-      font-size: 1.1rem;
-      color: var(--soft);
-      animation: fadeIn 2s ease;
-    }
-
-    .btn {
-      margin-top: 40px;
-      padding: 14px 40px;
-      background: linear-gradient(90deg, var(--gold), var(--accent));
-      color: white;
-      border: none;
-      border-radius: 40px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s ease;
-      text-decoration: none;
-      animation: fadeUp 1.5s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-    }
-
-    .brand-mark {
-      position: absolute;
-      bottom: 30px;
-      font-size: 0.9rem;
-      color: #777;
-      letter-spacing: 1px;
-      animation: fadeIn 2.5s ease;
-    }
-
-    /* Animations */
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.3rem;
-        text-align: center;
-      }
-      p {
-        text-align: center;
-        font-size: 1rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h1>Welcome to <span>Sheila Store</span></h1>
-  <p>Elegan, modern, dan profesional — gaya yang memikat setiap hari ✨</p>
-  <a href="katalog.html" class="btn">Masuk ke Katalog</a>
-  <div class="brand-mark">© 2025 Sheila Store</div>
+<body class="welcome-page">
+  <main class="welcome-inner">
+    <h1 class="brand">SHEILA <span class="accent">STORE</span></h1>
+    <p class="tag">Elegance • Minimal • Professional</p>
+    <a class="cta" href="katalog.html" aria-label="Masuk ke katalog">Lihat Katalog</a>
+    <p class="note">Klik tombol untuk melihat koleksi — cocok untuk ditaruh di bio Instagram.</p>
+  </main>
 </body>
 </html>
