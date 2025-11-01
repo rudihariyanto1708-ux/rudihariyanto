@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Katalog — SHEILA STORE</title>
+  <title>Koleksi — SHEILA STORE</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -19,69 +19,62 @@
     </div>
   </header>
 
-  <section class="hero-small">
-    <h2>Koleksi Terbaru</h2>
-    <p class="sub">Klik gambar untuk detail produk</p>
+  <section class="section-intro">
+    <div class="maxwidth">
+      <h2 class="section-title">Koleksi Manik-Manik</h2>
+      <p class="section-sub">Cincin & gelang handcrafted — dipilih bahan berkualitas dan finishing halus.</p>
+    </div>
   </section>
 
-  <main class="catalog-grid" aria-live="polite">
-    <!-- Ulangi blok <article> untuk menambah produk -->
-    <article class="card" onclick="openProduct('img/produk1.jpg','Dress Putih Elegan',149000,'Dress putih elegan dengan potongan modern — bahan lembut dan nyaman.')">
-      <div class="card-media">
-        <img src="img/produk1.jpg" alt="Dress Putih Elegan">
-        <div class="overlay">
-          <div class="overlay-text">
-            <strong>Dress Putih Elegan</strong>
-            <span>Rp 149.000</span>
-          </div>
-        </div>
+  <main class="catalog-grid maxwidth" aria-live="polite">
+    <!-- contoh produk: ganti gambar & data sesuai kebutuhan -->
+    <article class="card" onclick="openProduct('img/ring1.jpg','Cincin Aurora','129000','Cincin manik-manik dengan kombinasi mutiara dan kristal. Ukuran S-M.')">
+      <div class="card-media"><img src="img/ring1.jpg" alt="Cincin Aurora"></div>
+      <div class="card-body">
+        <div class="product-name">Cincin Aurora</div>
+        <div class="product-price">Rp 129.000</div>
       </div>
     </article>
 
-    <article class="card" onclick="openProduct('img/produk2.jpg','Tas Kulit Premium',249000,'Tas kulit premium — desain minimal dan kualitas jahitan terbaik.')">
-      <div class="card-media">
-        <img src="img/produk2.jpg" alt="Tas Kulit Premium">
-        <div class="overlay">
-          <div class="overlay-text">
-            <strong>Tas Kulit Premium</strong>
-            <span>Rp 249.000</span>
-          </div>
-        </div>
+    <article class="card" onclick="openProduct('img/bracelet1.jpg','Gelang Lila','89000','Gelang manik-manik pastel, sangat ringan dan nyaman dipakai.')">
+      <div class="card-media"><img src="img/bracelet1.jpg" alt="Gelang Lila"></div>
+      <div class="card-body">
+        <div class="product-name">Gelang Lila</div>
+        <div class="product-price">Rp 89.000</div>
       </div>
     </article>
 
-    <article class="card" onclick="openProduct('img/produk3.jpg','Sepatu Classic',199000,'Sepatu classic nyaman — sol empuk dengan model timeless.')">
-      <div class="card-media">
-        <img src="img/produk3.jpg" alt="Sepatu Classic">
-        <div class="overlay">
-          <div class="overlay-text">
-            <strong>Sepatu Classic</strong>
-            <span>Rp 199.000</span>
-          </div>
-        </div>
+    <article class="card" onclick="openProduct('img/ring2.jpg','Cincin Pearl','149000','Cincin kombinasi manik kaca dan mutiara air tawar — elegan.')">
+      <div class="card-media"><img src="img/ring2.jpg" alt="Cincin Pearl"></div>
+      <div class="card-body">
+        <div class="product-name">Cincin Pearl</div>
+        <div class="product-price">Rp 149.000</div>
       </div>
     </article>
 
+    <article class="card" onclick="openProduct('img/bracelet2.jpg','Gelang Aurora','99000','Gelang double strand beraksen emas lembut.')">
+      <div class="card-media"><img src="img/bracelet2.jpg" alt="Gelang Aurora"></div>
+      <div class="card-body">
+        <div class="product-name">Gelang Aurora</div>
+        <div class="product-price">Rp 99.000</div>
+      </div>
+    </article>
+
+    <!-- tambahkan produk lain dengan menyalin blok artikel di atas -->
   </main>
 
   <footer id="kontak" class="site-footer">
     <div class="footer-line"></div>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div>SHEILA <span class="accent">STORE</span></div>
-        <div class="footer-small">Elegance • Minimal • Professional</div>
-      </div>
-
+    <div class="footer-inner maxwidth">
+      <div class="footer-brand">SHEILA <span class="accent">STORE</span></div>
       <div class="footer-contacts">
-        <a id="wa-footer" href="#" target="_blank" rel="noreferrer">WhatsApp</a>
+        <a id="wa-footer-2" href="#" target="_blank" rel="noreferrer">WhatsApp</a>
         <span class="sep">|</span>
-        <a id="ig-footer" href="#" target="_blank" rel="noreferrer">Instagram</a>
+        <a id="ig-footer-2" href="#" target="_blank" rel="noreferrer">Instagram</a>
         <span class="sep">|</span>
-        <a id="email-footer" href="#" target="_blank" rel="noreferrer">Email</a>
+        <a id="email-footer-2" href="#" target="_blank" rel="noreferrer">Email</a>
       </div>
     </div>
-
-    <div class="copyright">© 2025 SHEILA STORE • All Rights Reserved</div>
   </footer>
 
   <script src="script.js"></script>
