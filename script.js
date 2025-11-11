@@ -143,20 +143,28 @@ function openProductMulti(imgs, name, price, desc){
       return;
     }
 
-    const WA_NUMBER = 'YOUR_WA_NUMBER'; // <-- ganti di sini (format: 62812...)
+    const WA_NUMBER = '6281994343986'; // <-- ganti di sini (format: 62812...)
 
-    const message =
-`Halo Sheila Store, saya ingin memesan:
-- Produk: ${prod}
-- Jumlah: ${qty}
-- Total: Rp ${total.toLocaleString('id-ID')}
+  // buat pesan
+const message =
+  "Halo Sheila Store, saya ingin memesan:\n" +
+  "- Produk: " + prod + "\n" +
+  "- Jumlah: " + qty + "\n" +
+  "- Total: Rp " + total.toLocaleString() + "\n" +
+  "Nama: " + buyer + "\n" +
+  "Nomor: " + phone + "\n" +
+  "Alamat: " + address;
 
-Nama: ${buyer}
-Nomor: ${phone}
-Alamat: ${address}`;
+// ubah semua baris baru ke %0A
+const encodedMessage = message.replace(/\n/g, "%0A");
 
-    const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
-    window.open(url,'_blank');
+// buat tautan yang dijamin aman
+const url = "https://api.whatsapp.com/send?phone=6281994343986&text=" + encodedMessage;
+
+// buka WhatsApp
+window.open(url, "_blank");
+
+
     popup.style.display = 'none';
   });
 })();
