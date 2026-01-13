@@ -202,37 +202,9 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 768px) {
-
-  .topbar {
-    padding: 12px 0;
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .card {
+    width: 90%;
   }
-
-  .brand-large {
-    font-size: 20px;
-    letter-spacing: 0.5px;
-  }
-
-  .brand-small {
-    font-size: 11px;
-  }
-
-  body {
-    padding-top: 70px; /* header lebih kecil di HP */
-  }
-
-  .hero {
-    min-height: calc(100vh - 70px);
-    padding: 36px 16px;
-  }
-
-  .hero-title {
-    font-size: 26px;
-    line-height: 1.25;
-  }
-
-  .hero-lead {
-    font-size: 14px;
-  }
-
 }
