@@ -143,7 +143,7 @@ function openProductMulti(imgs, name, price, desc){
       return;
     }
 
-    const WA_NUMBER = '6281994343986'; // <-- ganti di sini (format: 62812...)
+    const WA_NUMBER = '6285931500246'; // <-- ganti di sini (format: 62812...)
 
   // buat pesan
 const message =
