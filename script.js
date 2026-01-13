@@ -159,7 +159,7 @@ const message =
 const encodedMessage = message.replace(/\n/g, "%0A");
 
 // buat tautan yang dijamin aman
-const url = "https://api.whatsapp.com/send?phone=6281994343986&text=" + encodedMessage;
+const url = "https://api.whatsapp.com/send?phone=6285931500246&text=" + encodedMessage;
 
 // buka WhatsApp
 window.open(url, "_blank");
