@@ -232,3 +232,40 @@ body {
   }
 
 }
+/* ===== HERO IMAGE MOBILE FIX ===== */
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 24px 0 36px;
+  }
+
+  .hero-inner {
+    gap: 20px;
+  }
+
+  .hero-right {
+    width: 100%;
+    min-height: 220px;
+    height: 40vw;               /* responsive height */
+    max-height: 320px;
+    background-size: contain;   /* PENTING */
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 14px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .hero-lead {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .hero-left {
+    text-align: center;
+  }
+}
+
