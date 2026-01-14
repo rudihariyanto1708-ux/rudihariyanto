@@ -208,3 +208,32 @@ body {
     width: 90%;
   }
 }
+/* =========================
+   FIX HEADER & LOGO MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .topbar {
+    padding: 12px 0;
+  }
+
+  .brand {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .brand-large {
+    font-size: 20px;
+    line-height: 1.1;
+  }
+
+  .brand-small {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  body {
+    padding-top: 68px; /* menyesuaikan tinggi header HP */
+  }
+
+}
