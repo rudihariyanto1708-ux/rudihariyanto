@@ -202,12 +202,7 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* RESPONSIVE */
-@media (max-width: 700px) {
-  .card {
-    width: 90%;
-  }
-}
+
 /* =========================
    FIX HEADER & LOGO MOBILE
 ========================= */
